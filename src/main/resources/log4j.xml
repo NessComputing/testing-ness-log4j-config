@@ -18,6 +18,8 @@
         </layout>
     </appender>
 
+
+    <!-- Default is pretty verbose -->
     <logger name="io.trumpet">
         <level value="debug" />
     </logger>
@@ -26,34 +28,65 @@
         <level value="debug" />
     </logger>
 
+    <!-- silence the tons of log messages for all the unit tests from c3p0 start and stop -->
+    <logger name="com.mchange.v2">
+        <level value="warn" />
+    </logger>
+
+    <!-- Silence server / service startup and shutdown, which almost always is uninteresting in tests, but we want in production -->
+
     <logger name="ness.cache2">
         <level value="warn" />
     </logger>
-
-    <!-- silence the tons of log messages for all the unit tests from c3p0 start and stop -->
-    <logger name="com.mchange.v2.c3p0.impl">
-        <level value="warn" />
-    </logger>
-
-    <logger name="org.skife.config.ConfigurationObjectFactory">
+    <logger name="com.nesscomputing.server">
       <level value="warn" />
     </logger>
-    <logger name="com.sun.jersey">
-      <level value="warn" />
-    </logger>
-    <logger name="com.nesscomputing.service.discovery">
-      <level value="warn" />
-    </logger>
-    <logger name="org.eclipse.jetty.server">
+    <logger name="com.nesscomputing.jmx">
       <level value="warn" />
     </logger>
     <logger name="com.nesscomputing.jdbc">
       <level value="warn" />
     </logger>
-    <logger name="com.google.inject.servlet.GuiceFilter">
-      <level value="error" />
+    <logger name="com.nesscomputing.db">
+      <level value="warn" />
+    </logger>
+    <logger name="com.nesscomputing.migratory">
+      <level value="warn" />
+    </logger>
+    <logger name="com.nesscomputing.quartz">
+      <level value="warn" />
+    </logger>
+    <logger name="com.nesscomputing.scopes">
+      <level value="warn" />
+    </logger>
+    <logger name="com.nesscomputing.tracking">
+      <level value="warn" />
+    </logger>
+    <logger name="com.nesscomputing.service.discovery">
+      <level value="warn" />
+    </logger>
+
+    <!-- No need to print out every config option for every test case... -->
+    <logger name="org.skife.config.ConfigurationObjectFactory">
+      <level value="warn" />
+    </logger>
+    
+    <!-- Prints out every bound resource -->
+    <logger name="com.sun.jersey">
+      <level value="warn" />
+    </logger>
+    <logger name="org.quartz">
+      <level value="warn" />
+    </logger>
+    <logger name="org.eclipse.jetty.server">
+      <level value="warn" />
     </logger>
     <logger name="net.sf.ehcache.config.ConfigurationFactory">
+      <level value="error" />
+    </logger>
+
+    <!-- Silence a particularly obnoxious and useless warning about multiple GuiceFilters -->
+    <logger name="com.google.inject.servlet.GuiceFilter">
       <level value="error" />
     </logger>
 
