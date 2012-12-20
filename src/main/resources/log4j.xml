@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<!--
+  This is the default logging setup for test cases.
+
+  If more/less logging is required, enable disable it on a per component base.
+-->
+
+<log4j:configuration
+    xmlns:log4j="http://jakarta.apache.org/log4j/"
+    threshold="trace">
+
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+        <param name="immediateFlush" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%p	%d{ISO8601}	%t	%c	%m%n" />
+        </layout>
+    </appender>
+
+    <logger name="io.trumpet">
+        <level value="debug" />
+    </logger>
+
+    <logger name="ness">
+        <level value="debug" />
+    </logger>
+
+    <logger name="ness.cache2">
+        <level value="warn" />
+    </logger>
+
+    <!-- silence the tons of log messages for all the unit tests from c3p0 start and stop -->
+    <logger name="com.mchange.v2.c3p0.impl">
+        <level value="warn" />
+    </logger>
+
+    <logger name="org.skife.config.ConfigurationObjectFactory">
+      <level value="warn" />
+    </logger>
+    <logger name="com.sun.jersey">
+      <level value="warn" />
+    </logger>
+    <logger name="com.nesscomputing.service.discovery">
+      <level value="warn" />
+    </logger>
+    <logger name="org.eclipse.jetty.server">
+      <level value="warn" />
+    </logger>
+    <logger name="com.nesscomputing.jdbc">
+      <level value="warn" />
+    </logger>
+    <logger name="com.google.inject.servlet.GuiceFilter">
+      <level value="error" />
+    </logger>
+    <logger name="net.sf.ehcache.config.ConfigurationFactory">
+      <level value="error" />
+    </logger>
+
+    <root>
+        <level value="info"/>
+        <appender-ref ref="CONSOLE" />
+    </root>
+</log4j:configuration>
