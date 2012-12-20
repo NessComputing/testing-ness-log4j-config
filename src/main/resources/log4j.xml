@@ -28,6 +28,10 @@
         <level value="debug" />
     </logger>
 
+    <logger name="com.nesscomputing">
+        <level value="debug" />
+    </logger>
+
     <!-- silence the tons of log messages for all the unit tests from c3p0 start and stop -->
     <logger name="com.mchange.v2">
         <level value="warn" />
