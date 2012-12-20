@@ -12,29 +12,29 @@
     threshold="trace">
 
     <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
-        <param name="immediateFlush" value="true"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%p	%d{ISO8601}	%t	%c	%m%n" />
-        </layout>
+      <param name="immediateFlush" value="true"/>
+      <layout class="org.apache.log4j.PatternLayout">
+        <param name="ConversionPattern" value="%p	%d{ISO8601}	%t	%c	%m%n" />
+      </layout>
     </appender>
 
 
     <!-- Default is pretty verbose -->
     <logger name="io.trumpet">
-        <level value="debug" />
+      <level value="debug" />
     </logger>
 
     <logger name="ness">
-        <level value="debug" />
+      <level value="debug" />
     </logger>
 
     <logger name="com.nesscomputing">
-        <level value="debug" />
+      <level value="debug" />
     </logger>
 
     <!-- silence the tons of log messages for all the unit tests from c3p0 start and stop -->
     <logger name="com.mchange.v2">
-        <level value="warn" />
+      <level value="warn" />
     </logger>
 
     <!-- Silence server / service startup and shutdown, which almost always is uninteresting in tests, but we want in production -->
@@ -95,7 +95,7 @@
     </logger>
 
     <root>
-        <level value="info"/>
-        <appender-ref ref="CONSOLE" />
+      <level value="info"/>
+      <appender-ref ref="CONSOLE" />
     </root>
 </log4j:configuration>
