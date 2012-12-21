@@ -71,6 +71,9 @@
     <logger name="com.nesscomputing.server">
       <level value="warn" />
     </logger>
+    <logger name="com.nesscomputing.httpserver">
+      <level value="warn" />
+    </logger>
     <logger name="com.nesscomputing.jmx">
       <level value="warn" />
     </logger>
