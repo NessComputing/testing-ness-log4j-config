@@ -59,6 +59,12 @@
     <logger name="ness.cache2">
         <level value="warn" />
     </logger>
+    <logger name="com.nesscomputing.lifecycle">
+      <level value="warn" />
+    </logger>
+    <logger name="com.nesscomputing.httpclient">
+      <level value="warn" />
+    </logger>
     <logger name="com.nesscomputing.server">
       <level value="warn" />
     </logger>
